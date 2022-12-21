@@ -6,6 +6,6 @@ RUN mvn -f /usr/src/app/pom.xml clean package
 FROM openjdk:18-oracle
 WORKDIR /app
 COPY --from=builder /usr/src/app/target/backend-0.0.1-SNAPSHOT.jar /app/backend-0.0.1-SNAPSHOT.jar
-SERVER_PORT 80
+ENV SERVER_PORT 80
 EXPOSE 80
 CMD ["java", "-jar", "/app/backend-0.0.1-SNAPSHOT.jar"]
