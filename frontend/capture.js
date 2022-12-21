@@ -97,7 +97,7 @@
       clearphoto();
     }
   }
-  var backend_host = "http://localhost:8080";
+  var backend_host = "https://facebackend.azurewebsites.net";
   function uploadImage(data) {
     fetch(backend_host + '/images', {
       method: 'POST',
