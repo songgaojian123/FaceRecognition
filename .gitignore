@@ -23,5 +23,6 @@
 hs_err_pid*
 
 frontend/.idea/
+frontend/venv
 backend/target/
 backend/images/
