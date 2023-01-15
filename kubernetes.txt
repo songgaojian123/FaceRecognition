@@ -1,0 +1,8 @@
+az aks create \
+    --resource-group kubernetes \
+    --name myAKSCluster \
+    --node-count 2 \
+    --generate-ssh-keys \
+    --attach-acr jaysong
+
+az aks get-credentials --resource-group kubernetes --name myAKSCluster
