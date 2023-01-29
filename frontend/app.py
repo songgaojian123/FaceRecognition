@@ -3,8 +3,9 @@ from flask import request
 import os
 import requests
 
-BACKEND_HOST = os.getenv('BACKEND_HOST', 'http://localhost:80')
+BACKEND_HOST = os.getenv('BACKEND_HOST', 'http://localhost:8080')
 SERVER_PORT = os.getenv('SERVER_PORT', 8000)
+DBSERVICE_HOST = os.getenv('DBSERVICE_HOST', 'http://localhost:8090')
 
 # Create Flask app
 app = Flask(__name__, static_url_path='/', static_folder='static')
@@ -28,5 +29,10 @@ def validate():
     response = requests.post(BACKEND_HOST + '/validate', data = request.data)
     return response.content
     
+@app.route('/form', methods=['POST'])
+def form():
+    response = requests.post(DBSERVICE_HOST + '/form', data=request.data)
+    return response.content
+
 if __name__ == '__main__': 
     app.run(host="0.0.0.0", port = SERVER_PORT, debug=True)

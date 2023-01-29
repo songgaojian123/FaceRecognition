@@ -1,0 +1,6 @@
+com/example/demo/db/Person.class
+com/example/demo/restservice/DatabaseService.class
+com/example/demo/db/DatabaseRepository.class
+com/example/demo/db/Image.class
+com/example/demo/db/DatabaseImpl.class
+com/example/demo/DatabaseApplication.class
